@@ -1,43 +1,49 @@
-// ─── CONFIG ───────────────────────────────────────────────────────────────────
+// ─── SKILLS DATA ──────────────────────────────────────────────────────────────
 const SKILLS = [
   {
     group: "Mobile",
-    items: ["Kotlin", "Jetpack Compose", "React Native", "TypeScript", "Expo / EAS", "Android Studio"]
+    items: ["Kotlin", "Jetpack Compose", "React Native", "Expo / EAS", "Android Studio"]
   },
   {
     group: "Backend",
-    items: ["Java / Spring Boot", "C# / .NET Core", "Node.js / Express", "REST APIs", "Microservicios"]
+    items: ["Java / Spring Boot", "C# / .NET Core", "Node.js / TypeScript", "Python / Qt", "REST APIs"]
   },
   {
-    group: "Datos & Cloud",
-    items: ["SQL Server", "Firebase / Firestore", "AWS S3 / LocalStack", "Docker", "Data Analysis"]
+    group: "Databases & Cloud",
+    items: ["SQL Server", "Oracle Database", "MySQL", "Firebase / Firestore", "AWS S3 / Lambda"]
   },
   {
-    group: "IA & Otros",
-    items: ["Google Gemini API", "Firebase AI", "Git / GitHub", "MVVM Architecture", "Retrofit / OkHttp"]
+    group: "Tools & Practices",
+    items: ["Docker", "Git / GitHub", "Scrum / Agile", "Google Cloud Platform", "MVVM Architecture"]
+  },
+  {
+    group: "AI & Other",
+    items: ["Google Gemini API", "Firebase AI", "Retrofit / OkHttp", "Room", "FCM Push Notifications"]
   }
 ];
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
-function createTechTags(techArray) {
-  return techArray
-    .map(t => `<span class="tech-tag">${t}</span>`)
-    .join('');
+function techTags(arr) {
+  return arr.map(t => `<span class="tech-tag">${t}</span>`).join('');
 }
 
-// ─── RENDERERS ────────────────────────────────────────────────────────────────
-function renderFeaturedProject(project) {
-  const href = project.links.frontend || project.links.main;
+// ─── PROJECT RENDERERS ────────────────────────────────────────────────────────
+function renderFeaturedProject(p) {
+  const href = p.links.frontend || p.links.main || '#';
   return `
     <a href="${href}" target="_blank" rel="noopener" class="project-card featured">
       <div class="project-body">
-        <span class="project-icon">${project.icon}</span>
-        <div class="project-title">${project.title}</div>
-        <p class="project-desc">${project.description}</p>
-        <div class="tech-stack">${createTechTags(project.tech)}</div>
+        <span class="project-icon">${p.icon}</span>
+        <div class="project-title">${p.title}</div>
+        <p class="project-desc">${p.description}</p>
+        <div class="tech-stack">${techTags(p.tech)}</div>
+        <div class="project-repo-links">
+          <a href="${p.links.frontend}" target="_blank" rel="noopener" class="repo-link">↗ Mobile repo</a>
+          <a href="${p.links.backend}" target="_blank" rel="noopener" class="repo-link">↗ Backend repo</a>
+        </div>
       </div>
       <div class="project-diagram">
-        <div class="arch-label">Arquitectura del sistema</div>
+        <div class="arch-label">System Architecture</div>
         <div class="arch-row">
           <span class="arch-box mobile">Android App</span>
           <span class="arch-arrow">←→</span>
@@ -54,8 +60,9 @@ function renderFeaturedProject(project) {
         <div class="arch-detail">
           <div>◎ Kotlin + Jetpack Compose (Mobile)</div>
           <div>◎ C# .NET Core (Backend)</div>
-          <div>◎ SQL Server (Persistencia)</div>
-          <div>◎ Google Gemini (Análisis IA)</div>
+          <div>◎ SQL Server (Persistence)</div>
+          <div>◎ Google Gemini (AI Analysis)</div>
+          <div>◎ FCM (Push Notifications)</div>
         </div>
       </div>
       <span class="project-link">↗</span>
@@ -63,19 +70,41 @@ function renderFeaturedProject(project) {
   `;
 }
 
-function renderProject(project) {
-  const href = project.links.main || Object.values(project.links)[0];
+function renderProject(p) {
+  const href = p.links.main || '#';
+  const linkLabel = p.links.main ? '↗' : '🔒 Private';
+  const isPrivate = !p.links.main;
   return `
-    <a href="${href}" target="_blank" rel="noopener" class="project-card">
-      <span class="project-icon">${project.icon}</span>
-      <div class="project-title">${project.title}</div>
-      <p class="project-desc">${project.description}</p>
-      <div class="tech-stack">${createTechTags(project.tech)}</div>
-      <span class="project-link">↗</span>
-    </a>
+    <${isPrivate ? 'div' : `a href="${href}" target="_blank" rel="noopener"`} class="project-card${isPrivate ? ' no-link' : ''}">
+      <span class="project-icon">${p.icon}</span>
+      <div class="project-title">${p.title}</div>
+      <p class="project-desc">${p.description}</p>
+      <div class="tech-stack">${techTags(p.tech)}</div>
+      <span class="project-link">${linkLabel}</span>
+    </${isPrivate ? 'div' : 'a'}>
   `;
 }
 
+// ─── EXPERIENCE RENDERER ──────────────────────────────────────────────────────
+function renderExperience(exp) {
+  return `
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">${exp.role}</div>
+          <div class="exp-company">${exp.company} · ${exp.location}</div>
+        </div>
+        <div class="exp-period">${exp.period}</div>
+      </div>
+      <ul class="exp-highlights">
+        ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
+      </ul>
+      <div class="tech-stack" style="margin-top:1rem;">${techTags(exp.tech)}</div>
+    </div>
+  `;
+}
+
+// ─── SKILLS RENDERER ──────────────────────────────────────────────────────────
 function renderSkills() {
   return SKILLS.map(({ group, items }) => `
     <div class="skill-group">
@@ -89,16 +118,22 @@ function renderSkills() {
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 async function init() {
-  // Load projects
-  const res = await fetch('./data/projects.json');
-  const projects = await res.json();
+  const [projects, experience] = await Promise.all([
+    fetch('./data/projects.json').then(r => r.json()),
+    fetch('./data/experience.json').then(r => r.json())
+  ]);
 
-  const grid = document.getElementById('projects-grid');
-  grid.innerHTML = projects
+  // Projects
+  document.getElementById('projects-grid').innerHTML = projects
     .map(p => p.featured ? renderFeaturedProject(p) : renderProject(p))
     .join('');
 
-  // Render skills
+  // Experience
+  document.getElementById('experience-list').innerHTML = experience
+    .map(renderExperience)
+    .join('');
+
+  // Skills
   document.getElementById('skills-grid').innerHTML = renderSkills();
 }
 

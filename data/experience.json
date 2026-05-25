@@ -1,0 +1,41 @@
+[
+  {
+    "role": "Full Stack Developer — Professional Internship",
+    "company": "GBSYS",
+    "period": "Jul 2025 – Nov 2025",
+    "location": "Heredia, Costa Rica",
+    "highlights": [
+      "Designed and built the complete Renuncias module end-to-end: use cases, E-R model, database schema, backend services, and JSF/PrimeFaces frontend.",
+      "Optimized database queries and refactored legacy modules, improving performance and reliability across key enterprise HR workflows.",
+      "Debugged and enhanced existing modules in a large-scale Java EE application deployed on Payara Server.",
+      "Participated in Scrum ceremonies and collaborated across teams in a VPN-based enterprise infrastructure."
+    ],
+    "tech": ["Java EE", "Hibernate", "Oracle Database", "JSF", "PrimeFaces", "Payara Server", "Scrum"]
+  },
+  {
+    "role": "Full Stack Developer — Employee Management System",
+    "company": "Icosoft",
+    "period": "Mar 2024 – Jul 2025",
+    "location": "Heredia, Costa Rica",
+    "highlights": [
+      "Collaborated in building a desktop application for employee and attendance management with fingerprint reader integration.",
+      "Worked across backend, frontend, and MySQL database design and integration.",
+      "Managed employee profiles, schedules, roles, and permission systems.",
+      "Followed Scrum methodology from requirements gathering through delivery."
+    ],
+    "tech": ["Python", "Qt Framework", "MySQL", "Fingerprint SDK", "Scrum"]
+  },
+  {
+    "role": "Programming Tutor",
+    "company": "Superprof · Freelance",
+    "period": "Nov 2023 – Present",
+    "location": "Heredia, Costa Rica · Remote",
+    "highlights": [
+      "Provide personalized programming tutoring sessions for university and high-school students.",
+      "Cover backend development fundamentals in Java, C#, Python, SQL, and full-stack concepts.",
+      "Assist students with academic projects, debugging, architecture understanding, and exam preparation.",
+      "Adapt teaching strategies to different learning styles and technical backgrounds."
+    ],
+    "tech": ["Java", "C#", "Python", "SQL", "Full-Stack Fundamentals"]
+  }
+]

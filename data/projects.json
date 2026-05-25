@@ -1,38 +1,54 @@
 [
   {
-    "id": "agrocity",
-    "title": "Agrocity App",
+    "id": "agrocity-mobile",
+    "title": "Agrocity — Mobile App",
     "icon": "🌿",
-    "description": "Aplicación Android para gestión de jardines urbanos con diagnóstico de cultivos y plagas por IA. Arquitectura full-stack completa: mobile nativo + API REST + base de datos relacional.",
+    "description": "Android application for managing urban gardens with AI-powered crop and pest diagnosis. Built with Kotlin and Jetpack Compose, following MVVM architecture. Communicates with a custom REST API backend and integrates Google Gemini for real-time image analysis.",
     "featured": true,
     "links": {
       "frontend": "https://github.com/Maik2421/Frontend-Agrocity-App",
       "backend": "https://github.com/Maik2421/Backend-Agrocity-App"
     },
-    "tech": ["Kotlin", "Jetpack Compose", "MVVM", "C# .NET Core", "SQL Server", "Gemini AI", "Retrofit", "REST API"],
-    "arch": [
-      { "label": "Android App", "type": "mobile" },
-      { "label": ".NET Core API", "type": "backend" },
-      { "label": "SQL Server", "type": "db" },
-      { "label": "Gemini AI", "type": "ai" }
-    ]
+    "tech": ["Kotlin", "Jetpack Compose", "MVVM", "Retrofit", "FCM", "Room", "C# .NET Core", "SQL Server", "Gemini AI", "REST API"]
+  },
+  {
+    "id": "agrocity-backend",
+    "title": "Agrocity — Backend API",
+    "icon": "⚙️",
+    "description": "RESTful API built with C# .NET Core to power the Agrocity mobile app. Handles crop management, user authentication, and real-time push notifications via Firebase Cloud Messaging. Backed by a relational SQL Server database with an optimized schema.",
+    "featured": false,
+    "links": {
+      "main": "https://github.com/Maik2421/Backend-Agrocity-App"
+    },
+    "tech": ["C# .NET Core", "SQL Server", "REST API", "Firebase FCM", "Entity Framework"]
   },
   {
     "id": "pregnancy",
-    "title": "Pregnancy Assistant",
+    "title": "Pregnancy Assistant App",
     "icon": "🤱",
-    "description": "App móvil de acompañamiento para embarazadas con chat en tiempo real, notificaciones push y autenticación. Construida con Expo + Firebase.",
+    "description": "Cross-platform mobile app built for pregnant women, offering real-time chat, appointment reminders, community posts, and an AI-powered question assistant. Features geolocation-based clinic maps and full offline support.",
     "featured": false,
     "links": {
       "main": "https://github.com/Maik2421/PregnancyAssistant-App"
     },
-    "tech": ["TypeScript", "React Native", "Expo SDK", "Expo EAS", "Firebase Auth", "Firestore", "FCM", "Kotlin"]
+    "tech": ["TypeScript", "React Native", "Expo EAS", "Firebase Auth", "Firestore", "FCM", "Google Sign-In", "Geolocation"]
+  },
+  {
+    "id": "icosoft",
+    "title": "Employee Management System",
+    "icon": "🖥️",
+    "description": "Desktop application developed for Icosoft featuring fingerprint reader integration for attendance tracking. Covers employee management, schedules, roles, and permission profiles. Built following Scrum methodology from requirements gathering to delivery.",
+    "featured": false,
+    "links": {
+      "main": null
+    },
+    "tech": ["Python", "Qt Framework", "MySQL", "Fingerprint SDK", "Scrum"]
   },
   {
     "id": "task-service",
     "title": "Task Service",
     "icon": "☑",
-    "description": "Microservicio de gestión de tareas desarrollado en Java. Arquitectura orientada a servicios con API REST.",
+    "description": "Microservice for task management built in Java with Spring Boot. Exposes a clean REST API following service-oriented architecture principles.",
     "featured": false,
     "links": {
       "main": "https://github.com/Maik2421/task-service"
@@ -43,7 +59,7 @@
     "id": "s3-log-manager",
     "title": "S3 Log Manager",
     "icon": "🗂",
-    "description": "App web para guardar y listar logs en un bucket S3 simulado con LocalStack. Demuestra integración con servicios cloud AWS de manera local.",
+    "description": "Web app for saving and listing logs in a simulated S3 bucket using LocalStack. Demonstrates local AWS cloud integration with Node.js and Docker.",
     "featured": false,
     "links": {
       "main": "https://github.com/Maik2421/s3-log-manager"
@@ -54,11 +70,11 @@
     "id": "data-analyst",
     "title": "Data Analyst Projects",
     "icon": "📊",
-    "description": "Colección de proyectos de análisis de datos: limpieza, exploración, visualización y extracción de insights.",
+    "description": "Collection of data analysis projects covering data cleaning, exploratory analysis, visualization, and insight extraction using Python and Pandas.",
     "featured": false,
     "links": {
       "main": "https://github.com/Maik2421/Data-analyst"
     },
-    "tech": ["Python", "Pandas", "Data Analysis", "Visualización","Power BI"]
+    "tech": ["Python", "Pandas", "Data Analysis", "Data Visualization"]
   }
 ]
