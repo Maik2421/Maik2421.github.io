@@ -2,15 +2,15 @@
 const SKILLS = [
   {
     group: "Mobile",
-    items: ["Kotlin", "Jetpack Compose", "React Native", "Expo / EAS", "Android Studio"]
+    items: ["Kotlin", "Jetpack Compose", "React Native", "TypeScript", "Expo / EAS", "Android Studio"]
   },
   {
     group: "Backend",
-    items: ["Java / Spring Boot", "C# / .NET Core", "Node.js / TypeScript", "Python / Qt", "REST APIs"]
+    items: ["Java / Spring Boot", "C# / .NET Core", "Node.js / Express", "Python / Qt", "REST APIs"]
   },
   {
     group: "Databases & Cloud",
-    items: ["SQL Server", "Oracle Database", "MySQL", "Firebase / Firestore", "AWS S3 / Lambda"]
+    items: ["SQL Server", "Oracle Database", "MySQL", "Firebase / Firestore", "AWS S3 / LocalStack"]
   },
   {
     group: "Tools & Practices",
@@ -18,7 +18,7 @@ const SKILLS = [
   },
   {
     group: "AI & Other",
-    items: ["Google Gemini API", "Firebase AI", "Retrofit / OkHttp", "Room", "FCM Push Notifications"]
+    items: ["Google Gemini API", "Firebase AI", "Retrofit / OkHttp", "Room (offline)", "FCM Push Notifications"]
   }
 ];
 
