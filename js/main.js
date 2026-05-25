@@ -37,10 +37,6 @@ function renderFeaturedProject(p) {
         <div class="project-title">${p.title}</div>
         <p class="project-desc">${p.description}</p>
         <div class="tech-stack">${techTags(p.tech)}</div>
-        <div class="project-repo-links">
-          <a href="${p.links.frontend}" target="_blank" rel="noopener" class="repo-link">↗ Mobile repo</a>
-          <a href="${p.links.backend}" target="_blank" rel="noopener" class="repo-link">↗ Backend repo</a>
-        </div>
       </div>
       <div class="project-diagram">
         <div class="arch-label">System Architecture</div>
