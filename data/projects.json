@@ -6,8 +6,7 @@
     "description": "Android application for managing urban gardens with AI-powered crop and pest diagnosis. Built with Kotlin and Jetpack Compose, following MVVM architecture. Communicates with a custom REST API backend and integrates Google Gemini for real-time image analysis.",
     "featured": true,
     "links": {
-      "frontend": "https://github.com/Maik2421/Frontend-Agrocity-App",
-      "backend": "https://github.com/Maik2421/Backend-Agrocity-App"
+      "main": "https://github.com/Maik2421/Frontend-Agrocity-App"
     },
     "tech": ["Kotlin", "Jetpack Compose", "MVVM", "Retrofit", "FCM", "Room", "C# .NET Core", "SQL Server", "Gemini AI", "REST API"]
   },
